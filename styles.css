@@ -64,9 +64,14 @@ body {
 #grid-container {
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid red;
+    width: 320px;
+    margin: 5%;
+    outline: 1px dashed red;
 }
 
-#grid-container > div {
-    border: 2px solid black;
+.grid-item {
+    background-color: white;
+    width: fit-content;
+    padding: 10px;
+    outline: 1px dashed black;
 }
