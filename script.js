@@ -15,11 +15,17 @@ const gridSizeButton = document.querySelector("#grid-size-button");
 
 gridSizeButton.addEventListener("click", (event) => {
     userGridSize = prompt("What size would you like the grid to be? (1-100)");
+
     if (userGridSize === null) {
-        alert("test: cancelled");
-    } else if (userGridSize > 0 && userGridSize < 101) {
-        alert("test: correct size");
+        alert("Cancelled");
+    } else if (userGridSize >= 1 && userGridSize <= 100) {
+        gridContainer.innerHTML = "";
+        const userGridItemSize = 650 / userGridSize / 650 * 100;
+        for (i = 0; i < (userGridSize * userGridSize); i++) {
+                gridItem.style.cssText = `height: ${userGridItemSize}%; width: ${userGridItemSize}%;`;
+                gridContainer.appendChild(gridItem.cloneNode(true)); 
+        }
     } else {
-        alert("test: incorrect input");
+        alert("Please choose a grid size between 1 and 100");
     }
 });
