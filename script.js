@@ -5,5 +5,10 @@ gridItem.classList.add("grid-item");
 
 for (i = 0; i < 256; i++) {
     gridContainer.appendChild(gridItem.cloneNode(true));
-    console.log(i);
 }
+
+gridContainer.addEventListener("mouseover", (event) => {
+    event.target.classList.add("grid-item-active");
+});
+
+

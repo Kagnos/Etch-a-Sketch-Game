@@ -75,3 +75,7 @@ body {
     padding: 10px;
     outline: 1px dashed black;
 }
+
+.grid-item-active {
+  background-color: #00000050;
+}
