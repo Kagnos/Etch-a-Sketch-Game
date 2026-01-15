@@ -61,11 +61,15 @@ body {
     background-color: #ccc;
 }
 
+#grid-size-button {
+    margin: 5% 0 0 5%;
+  }
+
 #grid-container {
     display: flex;
     flex-wrap: wrap;
     width: 320px;
-    margin: 5%;
+    margin: 2% 0 0 5%;
     outline: 1px dashed red;
 }
 
