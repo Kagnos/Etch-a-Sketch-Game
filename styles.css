@@ -77,22 +77,29 @@ body {
 }
 
 .button {
+  background-color: white;
   border: 2px solid goldenrod;
   border-radius: 8px;
-  box-shadow: 2px 2px 5px black;
+  box-shadow: 4px 4px 5px black;
 }
 
 .button:hover {
-  background-color: #cfcfcf;
+  background-color: #ccc;
 }
 
 .button-active {
-  background-color: black;
-  color: white;
+  box-shadow: none;
+  background-color: #adadad;
+  border-color: #bb8e1c;
+}
+
+ .button:active {
+  box-shadow:  2px 2px 5px black;
+  background-color: #adadad;
 }
 
 .button-active:hover {
-  background-color: #202020;
+  background-color: #adadad;
 }
 
 #color-picker {
