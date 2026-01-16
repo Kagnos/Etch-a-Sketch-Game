@@ -57,8 +57,21 @@ h1, h2, h3, h4, h5, h6 {
 
 /* My code: */
 
+:root {
+  --main-color: #35477a;
+  --accent-color: goldenrod;
+  --accent-color-active: #bb8e1c;
+  --element-color: white;
+  --element-color-hover: #ccc;
+  --element-color-active: #adadad;
+  --font-color: black;
+  --box-shadow-color: black;
+  --grid-line-color: #333;
+  --brush-color: black;
+}
+
 body {
-    background-color: #35477a;
+    background-color: var(--main-color);
 }
 
 #main-container {
@@ -69,6 +82,8 @@ body {
   min-height: 100vh;
 }
 
+/* Button styles */
+
 #button-container {
   display: flex;
   margin: 80px 0 40px 0;
@@ -77,50 +92,57 @@ body {
 }
 
 .button {
-  background-color: white;
-  border: 2px solid goldenrod;
+  background-color: var(--element-color);
+  border: 2px solid var(--accent-color);
   border-radius: 8px;
-  box-shadow: 4px 4px 5px black;
+  box-shadow: 4px 4px 5px var(--box-shadow-color);
 }
 
 .button:hover {
-  background-color: #ccc;
+  background-color: var(--element-color-hover);
+}
+
+ .button:active {
+  box-shadow: 2px 2px 5px var(--box-shadow-color);
+  background-color: var(--element-color-active);
 }
 
 .button-active {
   box-shadow: none;
-  background-color: #adadad;
-  border-color: #bb8e1c;
-}
-
- .button:active {
-  box-shadow:  2px 2px 5px black;
-  background-color: #adadad;
+  background-color: var(--element-color-active);
+  border-color: var(--accent-color-active);
 }
 
 .button-active:hover {
-  background-color: #adadad;
+  background-color: var(--element-color-active);
+}
+
+ .button-active:active {
+  box-shadow: none;
+  background-color: var(--element-color-active);
 }
 
 #color-picker {
   height: auto;
 }
 
+/* Grid styles */
+
 #grid-container {
     display: flex;
     flex-wrap: wrap;
     height: 1000px;
     width: 1000px;
-    border: 2px solid goldenrod;
+    border: 2px solid var(--accent-color);
 }
 
 .grid-item {
-    background-color: white;
+    background-color: var(--element-color);
     height: 6.25%;
     width: 6.25%;
-    border: 1px solid #333333;
+    border: 1px solid var(--grid-line-color);
 }
 
 .grid-item-active {
-  background-color: black;
+  background-color: var(--brush-color);
 }

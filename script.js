@@ -45,11 +45,11 @@ resetButton.addEventListener("click", (event) => {
     }
 }});
 
-//const colorPicker = document.querySelector("#color-picker");
+const colorPicker = document.querySelector("#color-picker");
 
-//colorPicker.addEventListener("input", (event) => {
-//    event.target.value;
-//})
+colorPicker.addEventListener("input", (event) => {
+    event.target.value;
+})
 
 const colorButton = document.querySelector("#color-button");
 const darkenButton = document.querySelector("#darken-button");
@@ -65,6 +65,10 @@ colorButton.addEventListener("click", (event) => {
     lightenButton.classList.remove("button-active");
     rainbowButton.classList.remove("button-active");
     eraserButton.classList.remove("button-active");
+
+    gridContainer.addEventListener("mouseover", (event) => {
+        event.target.classList.add("grid-item-active");
+    });
 });
 
 darkenButton.addEventListener("click", (event) => {
@@ -98,5 +102,7 @@ eraserButton.addEventListener("click", (event) => {
     rainbowButton.classList.remove("button-active");
     eraserButton.classList.add("button-active");
 
-//    gridContainer.style.backgroundColor = "white";
+    gridContainer.addEventListener("mouseover", (event) => {
+        event.target.classList.remove("grid-item-active");
+    });
 });
