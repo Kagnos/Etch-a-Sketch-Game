@@ -61,24 +61,39 @@ body {
     background-color: #ccc;
 }
 
-#grid-size-button {
-    margin: 5% 0 0 5%;
-  }
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#button-container {
+  display: flex;
+  margin-bottom: 50px;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+.button {
+  border: 2px solid black;
+  border-radius: 8px;
+}
 
 #grid-container {
     display: flex;
     flex-wrap: wrap;
     height: 1000px;
     width: 1000px;
-    margin: 2% 0 0 5%;
-    border: 1px solid red;
+    border: 2px solid black;
 }
 
 .grid-item {
     background-color: white;
     height: 6.25%;
     width: 6.25%;
-    border: 1px solid #808080;
+    border: 1px solid #333333;
 }
 
 .grid-item-active {
