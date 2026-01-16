@@ -44,3 +44,59 @@ resetButton.addEventListener("click", (event) => {
         gridContainer.appendChild(gridItem.cloneNode(true));
     }
 }});
+
+//const colorPicker = document.querySelector("#color-picker");
+
+//colorPicker.addEventListener("input", (event) => {
+//    event.target.value;
+//})
+
+const colorButton = document.querySelector("#color-button");
+const darkenButton = document.querySelector("#darken-button");
+const lightenButton = document.querySelector("#lighten-button");
+const rainbowButton = document.querySelector("#rainbow-button");
+const eraserButton = document.querySelector("#eraser-button");
+
+const gridItemActive = document.querySelector(".grid-item-active");
+
+colorButton.addEventListener("click", (event) => {
+    colorButton.classList.add("button-active");
+    darkenButton.classList.remove("button-active");
+    lightenButton.classList.remove("button-active");
+    rainbowButton.classList.remove("button-active");
+    eraserButton.classList.remove("button-active");
+});
+
+darkenButton.addEventListener("click", (event) => {
+    colorButton.classList.remove("button-active");
+    darkenButton.classList.add("button-active");
+    lightenButton.classList.remove("button-active");
+    rainbowButton.classList.remove("button-active");
+    eraserButton.classList.remove("button-active");
+});
+
+lightenButton.addEventListener("click", (event) => {
+    colorButton.classList.remove("button-active");
+    darkenButton.classList.remove("button-active");
+    lightenButton.classList.add("button-active");
+    rainbowButton.classList.remove("button-active");
+    eraserButton.classList.remove("button-active");
+});
+
+rainbowButton.addEventListener("click", (event) => {
+    colorButton.classList.remove("button-active");
+    darkenButton.classList.remove("button-active");
+    lightenButton.classList.remove("button-active");
+    rainbowButton.classList.add("button-active");
+    eraserButton.classList.remove("button-active");
+});
+
+eraserButton.addEventListener("click", (event) => {
+    colorButton.classList.remove("button-active");
+    darkenButton.classList.remove("button-active");
+    lightenButton.classList.remove("button-active");
+    rainbowButton.classList.remove("button-active");
+    eraserButton.classList.add("button-active");
+
+//    gridContainer.style.backgroundColor = "white";
+});
