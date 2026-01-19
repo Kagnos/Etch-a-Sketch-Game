@@ -3,13 +3,19 @@ const gridContainer = document.querySelector("#grid-container");
 gridItem.textContent = "";
 gridItem.classList.add("grid-item");
 
+// Starting values
+
 for (i = 0; i < 256; i++) {
     gridContainer.appendChild(gridItem.cloneNode(true));
 };
 
 gridContainer.addEventListener("mouseover", (event) => {
-    event.target.classList.add("grid-item-active");
+    event.target.style.backgroundColor = colorPicker.value;
 });
+
+// Buttons
+
+// Grid size button
 
 const gridSizeButton = document.querySelector("#grid-size-button");
 let userGridSize;
@@ -31,6 +37,8 @@ gridSizeButton.addEventListener("click", (event) => {
     }
 });
 
+// Reset button
+
 const resetButton = document.querySelector("#reset-button");
 
 resetButton.addEventListener("click", (event) => {
@@ -45,11 +53,14 @@ resetButton.addEventListener("click", (event) => {
     }
 }});
 
-const colorPicker = document.querySelector("#color-picker");
+// Color picker button
 
-colorPicker.addEventListener("input", (event) => {
-    event.target.value;
-})
+const colorPicker = document.querySelector("#color-picker");
+const button = document.querySelector(".button");
+
+
+
+// Color button
 
 const colorButton = document.querySelector("#color-button");
 const darkenButton = document.querySelector("#darken-button");
@@ -57,19 +68,15 @@ const lightenButton = document.querySelector("#lighten-button");
 const rainbowButton = document.querySelector("#rainbow-button");
 const eraserButton = document.querySelector("#eraser-button");
 
-const gridItemActive = document.querySelector(".grid-item-active");
-
 colorButton.addEventListener("click", (event) => {
     colorButton.classList.add("button-active");
     darkenButton.classList.remove("button-active");
     lightenButton.classList.remove("button-active");
     rainbowButton.classList.remove("button-active");
     eraserButton.classList.remove("button-active");
-
-    gridContainer.addEventListener("mouseover", (event) => {
-        event.target.classList.add("grid-item-active");
-    });
 });
+
+// Darken button
 
 darkenButton.addEventListener("click", (event) => {
     colorButton.classList.remove("button-active");
@@ -79,6 +86,8 @@ darkenButton.addEventListener("click", (event) => {
     eraserButton.classList.remove("button-active");
 });
 
+// Lighten button
+
 lightenButton.addEventListener("click", (event) => {
     colorButton.classList.remove("button-active");
     darkenButton.classList.remove("button-active");
@@ -86,6 +95,8 @@ lightenButton.addEventListener("click", (event) => {
     rainbowButton.classList.remove("button-active");
     eraserButton.classList.remove("button-active");
 });
+
+// Rainbow button
 
 rainbowButton.addEventListener("click", (event) => {
     colorButton.classList.remove("button-active");
@@ -95,6 +106,8 @@ rainbowButton.addEventListener("click", (event) => {
     eraserButton.classList.remove("button-active");
 });
 
+// Eraser button
+
 eraserButton.addEventListener("click", (event) => {
     colorButton.classList.remove("button-active");
     darkenButton.classList.remove("button-active");
@@ -103,6 +116,6 @@ eraserButton.addEventListener("click", (event) => {
     eraserButton.classList.add("button-active");
 
     gridContainer.addEventListener("mouseover", (event) => {
-        event.target.classList.remove("grid-item-active");
+        event.target.style.backgroundColor = "white";
     });
 });
