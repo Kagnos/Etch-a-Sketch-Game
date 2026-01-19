@@ -3,6 +3,8 @@ const gridContainer = document.querySelector("#grid-container");
 gridItem.textContent = "";
 gridItem.classList.add("grid-item");
 
+const colorPicker = document.querySelector("#color-picker");
+
 // Starting values
 
 for (i = 0; i < 256; i++) {
@@ -23,42 +25,43 @@ let userGridSize;
 gridSizeButton.addEventListener("click", (event) => {
     userGridSize = prompt("What size would you like the grid to be? (1-100)");
 
-    if (userGridSize === null) {
-        alert("Cancelled");
-    } else if (userGridSize >= 1 && userGridSize <= 100) {
+    if (userGridSize >= 1 && userGridSize <= 100) {
         gridContainer.innerHTML = "";
         const userGridItemSize = 1000 / userGridSize / 1000 * 100;
         for (i = 0; i < (userGridSize * userGridSize); i++) {
                 gridItem.style.cssText = `height: ${userGridItemSize}%; width: ${userGridItemSize}%;`;
                 gridContainer.appendChild(gridItem.cloneNode(true)); 
-        }
-    } else {
-        alert("Please choose a grid size between 1 and 100");
-    }
-});
+        }} else {
+            do {
+                userGridSize = prompt("Please choose a grid size between 1 and 100");
+            }
+            while ((!userGridSize >= 1 && userGridSize <= 100))
+                gridContainer.innerHTML = "";
+                const userGridItemSize = 1000 / userGridSize / 1000 * 100;
+                for (i = 0; i < (userGridSize * userGridSize); i++) {
+                    gridItem.style.cssText = `height: ${userGridItemSize}%; width: ${userGridItemSize}%;`;
+                    gridContainer.appendChild(gridItem.cloneNode(true)); 
+                }
+}});
 
 // Reset button
 
 const resetButton = document.querySelector("#reset-button");
 
 resetButton.addEventListener("click", (event) => {
-    if (userGridSize >= 1 && userGridSize <= 100) {
-        gridContainer.innerHTML = "";
-        for (i = 0; i < userGridSize * userGridSize; i++) {
-        gridContainer.appendChild(gridItem.cloneNode(true));
-    }} else {
+    if (userGridSize === undefined) { 
         gridContainer.innerHTML = "";
         for (i = 0; i < 256; i++) {
-        gridContainer.appendChild(gridItem.cloneNode(true));
+            gridContainer.appendChild(gridItem.cloneNode(true));
+    }} else if (userGridSize >= 1 && userGridSize <= 100){
+        gridContainer.innerHTML = "";
+        for (i = 0; i < userGridSize * userGridSize; i++) {
+            gridContainer.appendChild(gridItem.cloneNode(true));
+        }
+    } else if (userGridSize === "") {
+        
     }
-}});
-
-// Color picker button
-
-const colorPicker = document.querySelector("#color-picker");
-const button = document.querySelector(".button");
-
-
+});
 
 // Color button
 
@@ -74,6 +77,10 @@ colorButton.addEventListener("click", (event) => {
     lightenButton.classList.remove("button-active");
     rainbowButton.classList.remove("button-active");
     eraserButton.classList.remove("button-active");
+
+    gridContainer.addEventListener("mouseover", (event) => {
+        event.target.style.backgroundColor = colorPicker.value;
+    });
 });
 
 // Darken button
