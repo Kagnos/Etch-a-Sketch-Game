@@ -36,17 +36,17 @@ gridSizeButton.addEventListener("click", (event) => {
         for (i = 0; i < (userGridSize * userGridSize); i++) {
                 gridItem.style.cssText = `height: ${userGridItemSize}%; width: ${userGridItemSize}%;`;
                 gridContainer.appendChild(gridItem.cloneNode(true)); 
-        }} else {
-            do {
-                userGridSize = prompt("Please choose a grid size between 1 and 100");
+    }} else {
+        do {
+            userGridSize = prompt("Please choose a grid size between 1 and 100");
+        }
+        while ((!userGridSize >= 1 && userGridSize <= 100))
+            gridContainer.innerHTML = "";
+            const userGridItemSize = 1000 / userGridSize / 1000 * 100;
+            for (i = 0; i < (userGridSize * userGridSize); i++) {
+                gridItem.style.cssText = `height: ${userGridItemSize}%; width: ${userGridItemSize}%;`;
+                gridContainer.appendChild(gridItem.cloneNode(true)); 
             }
-            while ((!userGridSize >= 1 && userGridSize <= 100))
-                gridContainer.innerHTML = "";
-                const userGridItemSize = 1000 / userGridSize / 1000 * 100;
-                for (i = 0; i < (userGridSize * userGridSize); i++) {
-                    gridItem.style.cssText = `height: ${userGridItemSize}%; width: ${userGridItemSize}%;`;
-                    gridContainer.appendChild(gridItem.cloneNode(true)); 
-                }
 }});
 
 // Reset button
@@ -90,8 +90,6 @@ colorButton.addEventListener("click", (event) => {
 
 // Darken button
 
-// Darken button
-
 darkenButton.addEventListener("click", (event) => {
     colorButton.classList.remove("button-active");
     darkenButton.classList.add("button-active");
@@ -99,8 +97,6 @@ darkenButton.addEventListener("click", (event) => {
     rainbowButton.classList.remove("button-active");
     eraserButton.classList.remove("button-active");
 });
-
-// Lighten button
 
 // Lighten button
 
@@ -114,17 +110,17 @@ lightenButton.addEventListener("click", (event) => {
 
 // Rainbow button
 
-// Rainbow button
-
 rainbowButton.addEventListener("click", (event) => {
     colorButton.classList.remove("button-active");
     darkenButton.classList.remove("button-active");
     lightenButton.classList.remove("button-active");
     rainbowButton.classList.add("button-active");
     eraserButton.classList.remove("button-active");
-});
 
-// Eraser button
+    gridContainer.addEventListener("mouseover", (event) => {
+        event.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)})`
+    });
+});
 
 // Eraser button
 
