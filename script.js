@@ -65,8 +65,6 @@ const eraserButton = document.querySelector("#eraser-button");
 
 colorButton.addEventListener("click", (event) => {
     colorButton.classList.add("button-active");
-    darkenButton.classList.remove("button-active");
-    lightenButton.classList.remove("button-active");
     rainbowButton.classList.remove("button-active");
     eraserButton.classList.remove("button-active");
 
