@@ -132,6 +132,7 @@ body {
     flex-wrap: wrap;
     height: 1000px;
     width: 1000px;
+    background-color: var(--element-color);
     border: 2px solid var(--accent-color);
 }
 
