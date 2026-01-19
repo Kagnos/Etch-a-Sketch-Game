@@ -67,7 +67,6 @@ h1, h2, h3, h4, h5, h6 {
   --font-color: black;
   --box-shadow-color: black;
   --grid-line-color: #333;
-  --brush-color: black;
 }
 
 body {
@@ -141,8 +140,4 @@ body {
     height: 6.25%;
     width: 6.25%;
     border: 1px solid var(--grid-line-color);
-}
-
-.grid-item-active {
-  background-color: var(--brush-color);
 }
